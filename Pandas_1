@@ -1,0 +1,20 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0,4*np.pi,1000)
+volts = np.sin(x) # + 0.25 * np.random.rand(len(x))
+current = np.cos(x) # + 0.25 * np.random.rand(len(x))
+
+plt.plot(x, volts, label='Voltage')
+plt.plot(x, current, label="Current")
+plt.legend()
+#plt.show()
+
+signal_dict = {
+    'Voltage' : volts,
+    'Current' : current,
+}
+
+signal_df = pd.DataFrame(signal_dict)
+print(signal_df)
